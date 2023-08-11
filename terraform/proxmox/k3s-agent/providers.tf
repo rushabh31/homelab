@@ -30,6 +30,12 @@ variable "cipassword" {
   type = string
 }
 
+variable "vm_name_prefix" {
+  type = string
+}
+
+
+
 provider "proxmox" {
 
     pm_api_url = var.proxmox_api_url
