@@ -1,5 +1,7 @@
 # Ignore all .tfvars files in any directory
 **/*.tfvars
+# Ignore .terraform directories
+**/.terraform/*
 
 # Ignore override files as they can include sensitive information
 **/override.tf
@@ -30,3 +32,4 @@
 **/*.tmp
 **/*~
 **/.DS_Store
+
