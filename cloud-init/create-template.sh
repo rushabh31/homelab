@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#./create_ubuntu_lunar_template.sh <vm_id> <ubuntu_image_url> <memory_mb> <core_count>
+#./create-template.sh 9001 https://cloud-images.ubuntu.com/lunar/20230817/lunar-server-cloudimg-amd64.img 2048 4
 
 # Check if the correct number of arguments is provided
 if [ "$#" -ne 4 ]; then
@@ -34,6 +34,8 @@ else
     # Rename the image file to qcow2 format
     mv "/root/$image_filename" "/root/$qcow2_filename"
 fi
+
+apt update -y && apt install libguestfs-tools -y
 
 # Install qemu-guest-agent on the cloud image
 echo -e "\e[1;34mInstalling qemu-guest-agent on the cloud image...\e[0m"
